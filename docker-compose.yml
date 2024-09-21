@@ -1,3 +1,4 @@
+version: "3"
 services:
   backend:
     build:
@@ -26,6 +27,9 @@ services:
       - ./frontend:/app
     environment:
       - REACT_APP_API_URL=http://localhost:5000
+      - CHOKIDAR_USEPOLLING=true  # Added to support file changes within Docker
+    stdin_open: true  # Keeps the container open
+    tty: true         # Keeps the frontend container running
 
   db:
     image: mysql:8.0

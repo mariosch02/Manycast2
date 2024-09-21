@@ -15,13 +15,14 @@ def get_db_connection():
 
 @app.route('/')
 def home():
+    print("text")
     return send_from_directory(app.static_folder, 'index.html')
-healthcheck:
-  test: ["CMD", "curl", "-f", "http://localhost:5000/"]
-  interval: 30s
-  timeout: 10s
-  retries: 5
+
+@app.route('/test')
+def test():
+    print("text")
+    return "Tetxt"
+
 
 if __name__ == "__main__":
     app.run(debug=True)
-

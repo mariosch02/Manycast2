@@ -1,0 +1,2 @@
+CHOKIDAR_USEPOLLING=true  # Enable polling for Docker
+REACT_APP_API_URL=http://localhost:5000/api  # Example API URL
